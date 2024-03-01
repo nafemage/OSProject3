@@ -1,0 +1,8 @@
+[
+{
+  "directory": "C:/Users/kcjan/OneDrive/Desktop/hw3/build",
+  "command": "C:\\Users\\kcjan\\OneDrive\\Documents\\Compilers\\w64devkit\\w64devkit\\bin\\x86_64-w64-mingw32-g++.exe  @CMakeFiles/hw3_test.dir/includes_CXX.rsp -std=c++11 -Wall -Wextra -Wshadow -Werror -Wno-sign-compare -D_XOPEN_SOURCE=500 -g -o CMakeFiles\\hw3_test.dir\\test\\tests.cpp.obj -c C:\\Users\\kcjan\\OneDrive\\Desktop\\hw3\\test\\tests.cpp",
+  "file": "C:/Users/kcjan/OneDrive/Desktop/hw3/test/tests.cpp",
+  "output": "CMakeFiles/hw3_test.dir/test/tests.cpp.obj"
+}
+]
