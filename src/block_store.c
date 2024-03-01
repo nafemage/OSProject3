@@ -8,19 +8,72 @@
 // remove it before you submit. Just allows things to compile initially.
 #define UNUSED(x) (void)(x)
 
-struct block_store_t
-{
+//struct for block_store
+typedef struct block_store {
+    bitmap_t* bitmap;  //Creates a bitmap to show which blocks are free and not free
+    uint8_t* data_blocks;  //The pointer to the data_blocks
+} block_store_t;
+
+//Creates a block store
+block_store_t* block_store_create() {
+   
+    block_store_t* bs = calloc(1, sizeof(block_store_t)); //Allocates memory for all the block data
+    //Return null if unable to allocate blocks
+    if (!bs) { 
+        perror("Failed to allocate block_store");
+        return NULL;
+    }
 
 
-};
-block_store_t *block_store_create()
-{
-    return NULL;
+    size_t total_data_size = BLOCK_STORE_NUM_BYTES; // Total bytes for all blocks
+
+
+
+    bs->data_blocks = calloc(total_data_size, 1); //Allocates data_blocks in block_store 
+    if (!bs->data_blocks) { //If allocation failed
+        perror("Failed to allocate data blocks");
+        free(bs); //Free the memory that was allocated
+        return NULL;
+    }
+
+    // Calculates the starting index of the bitmap
+    size_t bitmap_byte_index = BITMAP_START_BLOCK * BLOCK_SIZE_BYTES;
+    
+
+    // Create an overlay bitmap starting at BITMAP_START_BLOCK within the data blocks
+    bs->bitmap = bitmap_overlay(BITMAP_SIZE_BITS, bs->data_blocks + bitmap_byte_index);
+    if (!bs->bitmap) {
+        perror("Failed to create bitmap overlay");
+        free(bs->data_blocks);
+        free(bs);
+        return NULL;
+    }
+
+    // Mark the blocks used by the bitmap as allocated
+    for (size_t i = 0; i < BITMAP_NUM_BLOCKS; ++i) {
+        size_t block_id = BITMAP_START_BLOCK + i;
+        if (!block_store_request(bs, block_id)) {
+            perror("Failed to allocate block for bitmap");
+            bitmap_destroy(bs->bitmap);
+            free(bs->data_blocks);
+            free(bs);
+            return NULL;
+        }
+    }
+
+    return bs;
 }
+void block_store_destroy(block_store_t* const bs) {
+    if (bs) {
+        // Free the data blocks
+        if (bs->data_blocks) {
+            free(bs->data_blocks);
+            bs->data_blocks = NULL;  // Nullify the pointer after freeing
+        }
 
-void block_store_destroy(block_store_t *const bs)
-{
-    UNUSED(bs);
+        // Free the block store structure itself
+        free(bs);
+    }
 }
 size_t block_store_allocate(block_store_t *const bs)
 {
