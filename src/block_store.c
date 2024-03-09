@@ -63,6 +63,7 @@ block_store_t* block_store_create() {
 
     return bs;
 }
+
 void block_store_destroy(block_store_t* const bs) {
     if (bs) {
         // Free the data blocks
@@ -75,23 +76,31 @@ void block_store_destroy(block_store_t* const bs) {
         free(bs);
     }
 }
+
 size_t block_store_allocate(block_store_t *const bs)
 {
-    UNUSED(bs);
-    return 0;
+    if(bs == NULL || bs->bitmap == NULL) return SIZE_MAX; //Checks for NULL values passed in
+	size_t block_id = bitmap_ffz(bs->bitmap); //Finding the first free block
+	if(block_id == SIZE_MAX) return SIZE_MAX; //Making Sure you can't over allocate
+	bitmap_set(bs->bitmap, block_id); //Setting the block
+	return block_id;
 }
 
 bool block_store_request(block_store_t *const bs, const size_t block_id)
 {
-    UNUSED(bs);
-    UNUSED(block_id);
-    return false;
+    if(bs == NULL || bs->bitmap == NULL) return false; //Checks for NULL values passed in
+	if(block_id >= BITMAP_SIZE_BITS) return false; //Makes sure valid block_id
+	if(bitmap_test(bs->bitmap, block_id)) return false; //Makes sure you cant request the same id twice
+
+	bitmap_set(bs->bitmap, block_id); //Setting the request
+	return true;
 }
 
 void block_store_release(block_store_t *const bs, const size_t block_id)
 {
-    UNUSED(bs);
-    UNUSED(block_id);
+    if(bs == NULL || bs->bitmap == NULL) return; //Checks for NULL values passed in
+	if(block_id >= BITMAP_SIZE_BITS) return; //Makes sure valid block_id
+	bitmap_reset(bs->bitmap, block_id); //Resets or releases the block
 }
 
 size_t block_store_get_used_blocks(const block_store_t *const bs)
@@ -108,7 +117,7 @@ size_t block_store_get_free_blocks(const block_store_t *const bs)
 
 size_t block_store_get_total_blocks()
 {
-    return 0;
+    return BLOCK_STORE_NUM_BLOCKS;
 }
 
 size_t block_store_read(const block_store_t *const bs, const size_t block_id, void *buffer)

@@ -1,3 +1,0 @@
-"C:\Program Files\CMake\bin\cmake.exe" -E rm -f CMakeFiles\hw3_test.dir/objects.a
-C:\Users\kcjan\OneDrive\Documents\Compilers\w64devkit\w64devkit\bin\x86_64-w64-mingw32-ar.exe qc CMakeFiles\hw3_test.dir/objects.a @CMakeFiles\hw3_test.dir\objects1.rsp
-C:\Users\kcjan\OneDrive\Documents\Compilers\w64devkit\w64devkit\bin\x86_64-w64-mingw32-g++.exe -std=c++11 -Wall -Wextra -Wshadow -Werror -Wno-sign-compare -D_XOPEN_SOURCE=500 -g -Wl,--whole-archive CMakeFiles\hw3_test.dir/objects.a -Wl,--no-whole-archive -o hw3_test.exe -Wl,--out-implib,libhw3_test.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\hw3_test.dir\linkLibs.rsp

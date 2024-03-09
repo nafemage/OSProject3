@@ -1,4 +1,4 @@
-set(CMAKE_C_COMPILER "C:/Users/kcjan/OneDrive/Documents/Compilers/w64devkit/w64devkit/bin/x86_64-w64-mingw32-gcc.exe")
+set(CMAKE_C_COMPILER "C:/Users/User/Documents/compilers/w64devkit/bin/gcc.exe")
 set(CMAKE_C_COMPILER_ARG1 "")
 set(CMAKE_C_COMPILER_ID "GNU")
 set(CMAKE_C_COMPILER_VERSION "13.2.0")
@@ -21,17 +21,17 @@ set(CMAKE_C_SIMULATE_VERSION "")
 
 
 
-set(CMAKE_AR "C:/Users/kcjan/OneDrive/Documents/Compilers/w64devkit/w64devkit/bin/x86_64-w64-mingw32-ar.exe")
-set(CMAKE_C_COMPILER_AR "C:/Users/kcjan/OneDrive/Documents/Compilers/w64devkit/w64devkit/bin/x86_64-w64-mingw32-gcc-ar.exe")
-set(CMAKE_RANLIB "C:/Users/kcjan/OneDrive/Documents/Compilers/w64devkit/w64devkit/bin/x86_64-w64-mingw32-ranlib.exe")
-set(CMAKE_C_COMPILER_RANLIB "C:/Users/kcjan/OneDrive/Documents/Compilers/w64devkit/w64devkit/bin/x86_64-w64-mingw32-gcc-ranlib.exe")
-set(CMAKE_LINKER "C:/Users/kcjan/OneDrive/Documents/Compilers/w64devkit/w64devkit/bin/x86_64-w64-mingw32-ld.exe")
+set(CMAKE_AR "C:/Users/User/Documents/compilers/w64devkit/bin/ar.exe")
+set(CMAKE_C_COMPILER_AR "C:/Users/User/Documents/compilers/w64devkit/bin/gcc-ar.exe")
+set(CMAKE_RANLIB "C:/Users/User/Documents/compilers/w64devkit/bin/ranlib.exe")
+set(CMAKE_C_COMPILER_RANLIB "C:/Users/User/Documents/compilers/w64devkit/bin/gcc-ranlib.exe")
+set(CMAKE_LINKER "C:/Users/User/Documents/compilers/w64devkit/bin/ld.exe")
 set(CMAKE_MT "")
 set(CMAKE_TAPI "CMAKE_TAPI-NOTFOUND")
 set(CMAKE_COMPILER_IS_GNUCC 1)
 set(CMAKE_C_COMPILER_LOADED 1)
 set(CMAKE_C_COMPILER_WORKS TRUE)
-set(CMAKE_C_ABI_COMPILED TRUE)
+set(CMAKE_C_ABI_COMPILED 0)
 
 set(CMAKE_C_COMPILER_ENV_VAR "CC")
 
@@ -42,9 +42,9 @@ set(CMAKE_C_LINKER_PREFERENCE 10)
 set(CMAKE_C_LINKER_DEPFILE_SUPPORTED TRUE)
 
 # Save compiler ABI information.
-set(CMAKE_C_SIZEOF_DATA_PTR "8")
+set(CMAKE_C_SIZEOF_DATA_PTR "")
 set(CMAKE_C_COMPILER_ABI "")
-set(CMAKE_C_BYTE_ORDER "LITTLE_ENDIAN")
+set(CMAKE_C_BYTE_ORDER "")
 set(CMAKE_C_LIBRARY_ARCHITECTURE "")
 
 if(CMAKE_C_SIZEOF_DATA_PTR)
@@ -68,7 +68,7 @@ endif()
 
 
 
-set(CMAKE_C_IMPLICIT_INCLUDE_DIRECTORIES "C:/Users/kcjan/OneDrive/Documents/Compilers/w64devkit/w64devkit/lib/gcc/x86_64-w64-mingw32/13.2.0/include;C:/Users/kcjan/OneDrive/Documents/Compilers/w64devkit/w64devkit/lib/gcc/x86_64-w64-mingw32/13.2.0/include-fixed;C:/Users/kcjan/OneDrive/Documents/Compilers/w64devkit/w64devkit/x86_64-w64-mingw32/include")
-set(CMAKE_C_IMPLICIT_LINK_LIBRARIES "mingw32;gcc;moldname;mingwex;kernel32;pthread;advapi32;shell32;user32;kernel32;mingw32;gcc;moldname;mingwex;kernel32")
-set(CMAKE_C_IMPLICIT_LINK_DIRECTORIES "C:/Users/kcjan/OneDrive/Documents/Compilers/w64devkit/w64devkit/lib/gcc/x86_64-w64-mingw32/13.2.0;C:/Users/kcjan/OneDrive/Documents/Compilers/w64devkit/w64devkit/lib/gcc;C:/Users/kcjan/OneDrive/Documents/Compilers/w64devkit/w64devkit/x86_64-w64-mingw32/lib;C:/Users/kcjan/OneDrive/Documents/Compilers/w64devkit/w64devkit/lib")
+set(CMAKE_C_IMPLICIT_INCLUDE_DIRECTORIES "")
+set(CMAKE_C_IMPLICIT_LINK_LIBRARIES "")
+set(CMAKE_C_IMPLICIT_LINK_DIRECTORIES "")
 set(CMAKE_C_IMPLICIT_LINK_FRAMEWORK_DIRECTORIES "")

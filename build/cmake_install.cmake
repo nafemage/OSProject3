@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/kcjan/OneDrive/Desktop/hw3
+# Install script for directory: C:/Users/User/Documents/Year 4/OS/OSProject3
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -34,7 +34,7 @@ endif()
 
 # Set default install directory permissions.
 if(NOT DEFINED CMAKE_OBJDUMP)
-  set(CMAKE_OBJDUMP "C:/Users/kcjan/OneDrive/Documents/Compilers/w64devkit/w64devkit/bin/x86_64-w64-mingw32-objdump.exe")
+  set(CMAKE_OBJDUMP "C:/Users/User/Documents/compilers/w64devkit/bin/objdump.exe")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/Users/kcjan/OneDrive/Desktop/hw3/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/Users/User/Documents/Year 4/OS/OSProject3/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

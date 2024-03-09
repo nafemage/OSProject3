@@ -1,8 +1,20 @@
 [
 {
-  "directory": "C:/Users/kcjan/OneDrive/Desktop/hw3/build",
-  "command": "C:\\Users\\kcjan\\OneDrive\\Documents\\Compilers\\w64devkit\\w64devkit\\bin\\x86_64-w64-mingw32-g++.exe  @CMakeFiles/hw3_test.dir/includes_CXX.rsp -std=c++11 -Wall -Wextra -Wshadow -Werror -Wno-sign-compare -D_XOPEN_SOURCE=500 -g -o CMakeFiles\\hw3_test.dir\\test\\tests.cpp.obj -c C:\\Users\\kcjan\\OneDrive\\Desktop\\hw3\\test\\tests.cpp",
-  "file": "C:/Users/kcjan/OneDrive/Desktop/hw3/test/tests.cpp",
+  "directory": "C:/Users/User/Documents/Year 4/OS/OSProject3/build",
+  "command": "C:/Users/User/Documents/compilers/w64devkit/bin/gcc.exe -Dblock_store_EXPORTS @CMakeFiles/block_store.dir/includes_C.rsp -std=c11 -Wall -Wextra -Wshadow -Werror -D_XOPEN_SOURCE=500 -g -o CMakeFiles/block_store.dir/src/block_store.c.obj -c \"C:/Users/User/Documents/Year 4/OS/OSProject3/src/block_store.c\"",
+  "file": "C:/Users/User/Documents/Year 4/OS/OSProject3/src/block_store.c",
+  "output": "CMakeFiles/block_store.dir/src/block_store.c.obj"
+},
+{
+  "directory": "C:/Users/User/Documents/Year 4/OS/OSProject3/build",
+  "command": "C:/Users/User/Documents/compilers/w64devkit/bin/gcc.exe -Dblock_store_EXPORTS @CMakeFiles/block_store.dir/includes_C.rsp -std=c11 -Wall -Wextra -Wshadow -Werror -D_XOPEN_SOURCE=500 -g -o CMakeFiles/block_store.dir/src/bitmap.c.obj -c \"C:/Users/User/Documents/Year 4/OS/OSProject3/src/bitmap.c\"",
+  "file": "C:/Users/User/Documents/Year 4/OS/OSProject3/src/bitmap.c",
+  "output": "CMakeFiles/block_store.dir/src/bitmap.c.obj"
+},
+{
+  "directory": "C:/Users/User/Documents/Year 4/OS/OSProject3/build",
+  "command": "C:/Users/User/Documents/compilers/w64devkit/bin/g++.exe  @CMakeFiles/hw3_test.dir/includes_CXX.rsp -std=c++11 -Wall -Wextra -Wshadow -Werror -Wno-sign-compare -D_XOPEN_SOURCE=500 -g -std=gnu++14 -o CMakeFiles/hw3_test.dir/test/tests.cpp.obj -c \"C:/Users/User/Documents/Year 4/OS/OSProject3/test/tests.cpp\"",
+  "file": "C:/Users/User/Documents/Year 4/OS/OSProject3/test/tests.cpp",
   "output": "CMakeFiles/hw3_test.dir/test/tests.cpp.obj"
 }
 ]

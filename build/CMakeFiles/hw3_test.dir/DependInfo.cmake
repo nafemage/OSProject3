@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "C:/Users/kcjan/OneDrive/Desktop/hw3/test/tests.cpp" "CMakeFiles/hw3_test.dir/test/tests.cpp.obj" "gcc" "CMakeFiles/hw3_test.dir/test/tests.cpp.obj.d"
+  "C:/Users/User/Documents/Year 4/OS/OSProject3/test/tests.cpp" "CMakeFiles/hw3_test.dir/test/tests.cpp.obj" "gcc" "CMakeFiles/hw3_test.dir/test/tests.cpp.obj.d"
   )
 
 # Targets to which this target links which contain Fortran sources.
