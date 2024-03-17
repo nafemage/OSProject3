@@ -105,14 +105,15 @@ void block_store_release(block_store_t *const bs, const size_t block_id)
 
 size_t block_store_get_used_blocks(const block_store_t *const bs)
 {
-    UNUSED(bs);
-    return 0;
+    if(bs == NULL || bs->bitmap == NULL) return SIZE_MAX; //Checking the passed in values
+	return bitmap_total_set(bs->bitmap); //Returning the used blocks
 }
 
 size_t block_store_get_free_blocks(const block_store_t *const bs)
 {
-    UNUSED(bs);
-    return 0;
+    if(bs == NULL || bs->bitmap == NULL) return SIZE_MAX; //Checking the passed in values
+	size_t used = bitmap_total_set(bs->bitmap); //Getting used blocks
+	return BITMAP_SIZE_BITS - used; //Calculating and returning the unused blocks
 }
 
 size_t block_store_get_total_blocks()
@@ -122,29 +123,44 @@ size_t block_store_get_total_blocks()
 
 size_t block_store_read(const block_store_t *const bs, const size_t block_id, void *buffer)
 {
-    UNUSED(bs);
-    UNUSED(block_id);
-    UNUSED(buffer);
-    return 0;
+    if(bs == NULL || bs->bitmap == NULL || buffer == NULL) return 0; //Checking the passed in values
+	if(block_id >= BLOCK_STORE_NUM_BLOCKS) return 0; 
+
+	size_t offset = block_id * BLOCK_SIZE_BYTES; //Getting the offset
+	uint8_t *source = bs->data_blocks + offset; //Getting the source
+	uint8_t *destination = (uint8_t *)buffer; //Setting up the destination
+
+	for(size_t i = 0; i < BLOCK_SIZE_BYTES; ++i){
+		destination[i] = source[i]; //reading the data from the source
+	}
+
+	return BLOCK_SIZE_BYTES;
 }
 
 size_t block_store_write(block_store_t *const bs, const size_t block_id, const void *buffer)
 {
-    UNUSED(bs);
-    UNUSED(block_id);
-    UNUSED(buffer);
-    return 0;
+    if(bs == NULL || bs->bitmap == NULL || buffer == NULL) return 0; //Checking the passed in values
+	if(block_id >= BLOCK_STORE_NUM_BLOCKS) return 0;
+
+	size_t offset = block_id * BLOCK_SIZE_BYTES; //Getting the offset
+	const uint8_t *source = (const uint8_t *)buffer; //Getting the source
+	uint8_t *destination = bs->data_blocks + offset; //Setting up the destination
+
+	for(size_t i = 0; i < BLOCK_SIZE_BYTES; ++i){
+		destination[i] = source[i]; //reading the data from the source
+	}
+	return BLOCK_SIZE_BYTES;
 }
 
 block_store_t *block_store_deserialize(const char *const filename)
 {
-    UNUSED(filename);
-    return NULL;
+	UNUSED(filename);
+	return NULL;
 }
 
 size_t block_store_serialize(const block_store_t *const bs, const char *const filename)
 {
-    UNUSED(bs);
     UNUSED(filename);
-    return 0;
+	UNUSED(bs);
+	return 0;
 }
